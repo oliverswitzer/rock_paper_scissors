@@ -1,20 +1,23 @@
 require './lib/computer_rps'
+require './lib/outcome'
+require 'bundler'
+Bundler.require
 
 module Game 
   class RPS_App < Sinatra::Application
 
-    get '/thow/:type' do
-      @options = ["rock", "paper", "scissors"]
+    get '/throw/:type' do
+      @user_play = params[:type]
+      @user_options = ["rock", "paper", "scissors"]
 
-      if @options.includes? params[:type].downcase
-        @computer_choice = ComputerRPS.new.play
-
+      if @user_options.include? @user_play.downcase
+        @computer_play = ComputerRPS.new.play
+        @outcome = Outcome.new(@user_play, @computer_play)
+        erb :outcome
       else
-        "404 not found suckaaaa"
+        erb :error
       end
-      
     end
-
   end
 end
 
