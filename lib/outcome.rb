@@ -6,7 +6,7 @@ class Outcome
   RULES = {
     :rock       =>  {:rock => "tie", :paper => "paper", :scissors => "rock"},
     :paper      =>  {:rock => "paper", :paper => "tie", :scissors => "scissors"},
-    :scissors   =>  {:rock => "rock", :paper => "scissors", :scissor => "tie"}
+    :scissors   =>  {:rock => "rock", :paper => "scissors", :scissors => "tie"}
   }
 
 	def initialize(user_inp, comp_inp)

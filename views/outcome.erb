@@ -1,8 +1,21 @@
 
 <h1>Rock, Paper, Scissors</h1>
 
-<h2>You chose: <%=@user_play.capitalize%></h2>
-<img src="/<%=@outcome.user_img%>"/>
-<h2>Computer chose: <%=@computer_play.capitalize%></h2>
-<img src="/<%=@outcome.comp_img%>"/>
-<h2>Winner: <%=@outcome.result.capitalize%></h2>
+<div class="container">
+	<div id="user_inp">
+		<h2>You chose: <%=@user_play.capitalize%></h2>
+		<img src="/<%=@outcome.user_img%>"/>
+	</div>
+
+
+	<div id="comp_inp">
+		<h2>Computer chose: <%=@computer_play.capitalize%></h2>
+		<img src="/<%=@outcome.comp_img%>"/>
+	</div>
+</div>
+
+<div id="winner">
+	<h2>Winner: <%=@outcome.result.capitalize%></h2>
+</div>
+
+<a id="play_again" href="/home">Play again!</a>
