@@ -18,6 +18,12 @@ module Game
         erb :error
       end
     end
+
+    get '/home' do
+
+      erb :home
+    end
+
   end
 end
 
